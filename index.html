@@ -4,87 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhanasekaran S · Full Stack Developer</title>
-    <!-- Tailwind CSS via CDN (v3) -->
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Optional subtle font smoothing -->
+    <!-- custom keyframes for fade-in animation (Tailwind arbitrary values) -->
     <style>
-        body { background: #f4f7fb; }
-        .card-hover { transition: all 0.2s ease; }
-        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 20px -12px rgba(0,0,0,0.15); }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(6px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes softPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.9s ease-out forwards;
+        }
+        .animate-softPulse {
+            animation: softPulse 3s infinite;
+        }
+        /* card hover lift with shadow */
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.02);
+        }
     </style>
 </head>
-<body class="font-sans antialiased text-gray-800">
+<body class="antialiased font-sans bg-gradient-to-br from-slate-50 via-indigo-50/30 to-blue-50 min-h-screen">
 
-    <!-- main container – responsive padding, max width -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+    <!-- main container with fade-in animation -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 animate-fadeIn">
+        
+        <!-- main card - white with subtle border, shadow-xl -->
+        <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/30 overflow-hidden">
 
-        <!-- professional card -->
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-
-            <!-- header section with name & contact -->
-            <div class="px-6 py-8 sm:px-10 sm:py-10 border-b border-gray-200 bg-gradient-to-r from-indigo-50 to-blue-50">
+            <!-- header with richer gradient and contact icons animation -->
+            <div class="px-6 py-8 sm:px-10 sm:py-10 bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
-                        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight">DHANASEKARAN S</h1>
-                        <p class="text-xl md:text-2xl text-indigo-700 font-semibold mt-1">FULL STACK DEVELOPER</p>
+                        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-md">DHANASEKARAN S</h1>
+                        <p class="text-xl md:text-2xl text-indigo-100 font-semibold mt-1 drop-shadow">FULL STACK DEVELOPER</p>
                     </div>
-                    <!-- contact details as simple text with emoji / line break -->
-                    <div class="text-sm md:text-base text-gray-700 space-y-1 md:text-right leading-relaxed">
-                        <div class="flex items-center md:justify-end gap-1"><span>📧</span> <a href="mailto:sekaransdhana365@gmail.com" class="hover:text-indigo-600 transition">sekaransdhana365@gmail.com</a></div>
-                        <div class="flex items-center md:justify-end gap-1"><span>📞</span> +91 99623 32392</div>
-                        <div class="flex items-center md:justify-end gap-1"><span>📍</span> Chennai, India</div>
-                        <div class="flex items-center md:justify-end gap-1"><span>🔗</span> <a href="linkedin.com/in/dhanasekaran-s-37719b249" class="hover:text-indigo-600 transition truncate">linkedin</a></div>
+                    <!-- contact details with hover scale animation -->
+                    <div class="text-sm md:text-base text-indigo-50 space-y-1 md:text-right">
+                        <div class="flex items-center md:justify-end gap-1 hover:scale-105 transition-transform origin-right">
+                            <span>📧</span> <a href="mailto:sekaransdhana365@gmail.com" class="hover:text-white transition">sekaransdhana365@gmail.com</a>
+                        </div>
+                        <div class="flex items-center md:justify-end gap-1 hover:scale-105 transition-transform origin-right">
+                            <span>📞</span> +91 99623 32392
+                        </div>
+                        <div class="flex items-center md:justify-end gap-1 hover:scale-105 transition-transform origin-right">
+                            <span>📍</span> Chennai, India
+                        </div>
+                        <div class="flex items-center md:justify-end gap-1 hover:scale-105 transition-transform origin-right">
+                            <span>🔗</span> <a href="#" class="hover:text-white transition truncate">linkedin.com/in/dhanasekaran-s-37719b249</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- professional summary -->
-            <div class="px-6 py-6 sm:px-10 border-b border-gray-200 bg-white">
-                <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold mb-3">Professional Summary</h2>
+            <!-- summary with light gradient background and soft pulse on icon (optional) -->
+            <div class="px-6 py-6 sm:px-10 border-b border-gray-100 bg-gradient-to-r from-indigo-50/80 to-blue-50/80">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="text-indigo-700 text-xl animate-softPulse">✨</span>
+                    <h2 class="text-lg uppercase tracking-wider text-indigo-800 font-semibold">Professional Summary</h2>
+                </div>
                 <p class="text-gray-700 leading-relaxed text-base">Full Stack Developer with 2 years of experience building responsive and scalable web applications using PHP, MySQL, and modern front-end technologies including JavaScript and React.js. Experienced in end-to-end development, REST API integration, and performance optimization. Proven ability to deliver secure, high-quality solutions that enhance operational efficiency and user experience.</p>
             </div>
 
-            <!-- skills & version control (as badges) -->
-            <div class="px-6 py-6 sm:px-10 border-b border-gray-200 bg-white">
-                <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold mb-4">Technical Skills</h2>
+            <!-- skills with colourful badges and hover animation -->
+            <div class="px-6 py-6 sm:px-10 border-b border-gray-100 bg-white">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-indigo-600 text-xl animate-bounce">⚙️</span>
+                    <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold">Technical Skills</h2>
+                </div>
                 <div class="space-y-4">
                     <div>
                         <span class="text-sm font-medium text-gray-500 block mb-2">Frontend</span>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">React.js</span>
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">JavaScript</span>
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">Bootstrap</span>
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">Tailwind CSS</span>
+                            <span class="bg-gradient-to-r from-indigo-100 to-indigo-200 text-indigo-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">React.js</span>
+                            <span class="bg-gradient-to-r from-indigo-100 to-indigo-200 text-indigo-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">JavaScript</span>
+                            <span class="bg-gradient-to-r from-indigo-100 to-indigo-200 text-indigo-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">Bootstrap</span>
+                            <span class="bg-gradient-to-r from-indigo-100 to-indigo-200 text-indigo-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">Tailwind CSS</span>
                         </div>
                     </div>
                     <div>
                         <span class="text-sm font-medium text-gray-500 block mb-2">Backend & API</span>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">PHP</span>
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">jQuery</span>
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">AJAX</span>
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">REST API</span>
+                            <span class="bg-gradient-to-r from-purple-100 to-purple-200 text-purple-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">PHP</span>
+                            <span class="bg-gradient-to-r from-purple-100 to-purple-200 text-purple-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">jQuery</span>
+                            <span class="bg-gradient-to-r from-purple-100 to-purple-200 text-purple-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">AJAX</span>
+                            <span class="bg-gradient-to-r from-purple-100 to-purple-200 text-purple-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">REST API</span>
                         </div>
                     </div>
                     <div>
                         <span class="text-sm font-medium text-gray-500 block mb-2">Database & Tools</span>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">MySQL</span>
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">Query Optimization</span>
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">Git</span>
-                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">GitHub</span>
+                            <span class="bg-gradient-to-r from-blue-100 to-blue-200 text-blue-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">MySQL</span>
+                            <span class="bg-gradient-to-r from-blue-100 to-blue-200 text-blue-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">Query Optimization</span>
+                            <span class="bg-gradient-to-r from-blue-100 to-blue-200 text-blue-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">Git</span>
+                            <span class="bg-gradient-to-r from-blue-100 to-blue-200 text-blue-900 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm hover:scale-105 transition-transform">GitHub</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- professional experience (single role) -->
-            <div class="px-6 py-6 sm:px-10 border-b border-gray-200 bg-white">
-                <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold mb-4">Professional Experience</h2>
-                <div class="mb-2">
+            <!-- experience with subtle striped background -->
+            <div class="px-6 py-6 sm:px-10 border-b border-gray-100 bg-gradient-to-r from-indigo-50/30 to-white">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-indigo-600 text-xl animate-pulse">💼</span>
+                    <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold">Professional Experience</h2>
+                </div>
+                <div class="mb-2 bg-white/50 p-5 rounded-xl hover-lift">
                     <div class="flex flex-wrap items-center justify-between gap-2">
                         <h3 class="text-xl font-bold text-gray-800">Full Stack Developer</h3>
-                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">July 2023 – Oct 2025</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">July 2023 – Oct 2025</span>
                     </div>
                     <p class="text-indigo-600 font-medium mb-3">Lead Integrated Business Service Pvt Ltd, Chennai</p>
                     <ul class="list-disc list-outside ml-5 space-y-2 text-gray-700 text-base">
@@ -96,76 +132,82 @@
                 </div>
             </div>
 
-            <!-- projects : 4 cards in grid -->
-            <div class="px-6 py-6 sm:px-10 border-b border-gray-200 bg-white">
-                <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold mb-5">Projects</h2>
+            <!-- projects with 3D lift cards and colorful accents -->
+            <div class="px-6 py-6 sm:px-10 border-b border-gray-100 bg-white">
+                <div class="flex items-center gap-2 mb-5">
+                    <span class="text-indigo-600 text-xl animate-spin [animation-duration:3s]">🚀</span>
+                    <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold">Projects</h2>
+                </div>
                 <div class="grid md:grid-cols-2 gap-6">
                     <!-- project 1 -->
-                    <div class="border border-gray-200 rounded-xl p-5 bg-gray-50 card-hover">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">📦 Pharmaceutical Distribution & Reporting Panel</h3>
+                    <div class="border border-indigo-100 rounded-xl p-5 bg-gradient-to-br from-white to-indigo-50/30 shadow-md hover-lift">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2 flex items-center gap-2"><span class="text-indigo-500">📦</span> Pharmaceutical Distribution & Reporting Panel</h3>
                         <p class="text-sm text-gray-600 mb-3">Centralized dashboard for logistics with admin controls, daily sales/returns uploads, LR tracking, POD matching, real‑time reporting.</p>
                         <div class="flex flex-wrap gap-1.5 mt-2">
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">HTML</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">CSS</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">JavaScript</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">Bootstrap</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">PHP</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">MySQL</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">jQuery</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">AJAX</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">Bootstrap</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">PHP</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">MySQL</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">jQuery</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">AJAX</span>
                         </div>
                     </div>
                     <!-- project 2 -->
-                    <div class="border border-gray-200 rounded-xl p-5 bg-gray-50 card-hover">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">⏱️ Employee Attendance Management System</h3>
-                        <p class="text-sm text-gray-600 mb-3">Role‑based web app for real‑time attendance tracking, shift allocation, holiday config. Dashboards for team heads (daily/monthly/late arrivals).</p>
+                    <div class="border border-indigo-100 rounded-xl p-5 bg-gradient-to-br from-white to-indigo-50/30 shadow-md hover-lift">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2 flex items-center gap-2"><span class="text-indigo-500">⏱️</span> Employee Attendance Management System</h3>
+                        <p class="text-sm text-gray-600 mb-3">Role‑based web app for real‑time attendance tracking, shift allocation, holiday config. Dashboards for team heads.</p>
                         <div class="flex flex-wrap gap-1.5 mt-2">
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">HTML</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">CSS</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">Bootstrap</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">PHP</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">MySQL</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">jQuery</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">AJAX</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">Bootstrap</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">PHP</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">MySQL</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">jQuery</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">AJAX</span>
                         </div>
                     </div>
                     <!-- project 3 -->
-                    <div class="border border-gray-200 rounded-xl p-5 bg-gray-50 card-hover">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">🛒 E‑Commerce Product Management System</h3>
-                        <p class="text-sm text-gray-600 mb-3">Admin panel for product, category, pricing, inventory management. Streamlined stock updates and product listing workflows.</p>
+                    <div class="border border-indigo-100 rounded-xl p-5 bg-gradient-to-br from-white to-indigo-50/30 shadow-md hover-lift">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2 flex items-center gap-2"><span class="text-indigo-500">🛒</span> E‑Commerce Product Management System</h3>
+                        <p class="text-sm text-gray-600 mb-3">Admin panel for product, category, pricing, inventory management. Streamlined stock updates.</p>
                         <div class="flex flex-wrap gap-1.5 mt-2">
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">HTML</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">CSS</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">JavaScript</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">Bootstrap</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">PHP</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">MySQL</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">jQuery</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">AJAX</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">Bootstrap</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">PHP</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">MySQL</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">jQuery</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">AJAX</span>
                         </div>
                     </div>
                     <!-- project 4 -->
-                    <div class="border border-gray-200 rounded-xl p-5 bg-gray-50 card-hover">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">📧 Email Campaign Management System</h3>
-                        <p class="text-sm text-gray-600 mb-3">Create, schedule, track email campaigns. Gmail API integration for sending, template management, open/click tracking. Analytics dashboard & queue logic.</p>
+                    <div class="border border-indigo-100 rounded-xl p-5 bg-gradient-to-br from-white to-indigo-50/30 shadow-md hover-lift">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2 flex items-center gap-2"><span class="text-indigo-500">📧</span> Email Campaign Management System</h3>
+                        <p class="text-sm text-gray-600 mb-3">Create, schedule, track email campaigns. Gmail API integration, template management, analytics dashboard.</p>
                         <div class="flex flex-wrap gap-1.5 mt-2">
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">React.js</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">Tailwind CSS</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">Gmail API</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">PHP</span>
-                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">MySQL</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">React.js</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">Gmail API</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">PHP</span>
+                            <span class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs px-2 py-1 rounded">MySQL</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- education & certifications in two columns on larger screens -->
-            <div class="px-6 py-6 sm:px-10 border-b border-gray-200 bg-white">
-                <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold mb-5">Education & Certifications</h2>
+            <!-- education & certifications with soft background and icons -->
+            <div class="px-6 py-6 sm:px-10 border-b border-gray-100 bg-gradient-to-r from-indigo-50/50 to-blue-50/50">
+                <div class="flex items-center gap-2 mb-5">
+                    <span class="text-indigo-600 text-xl animate-bounce [animation-duration:2s]">📚</span>
+                    <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold">Education & Certifications</h2>
+                </div>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- left: education -->
-                    <div>
-                        <h3 class="font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-3">🎓 Education</h3>
+                    <!-- education -->
+                    <div class="bg-white/70 p-5 rounded-2xl shadow-sm hover-lift">
+                        <h3 class="font-semibold text-gray-800 border-b border-indigo-200 pb-2 mb-3 flex items-center gap-2"><span class="text-indigo-500">🎓</span> Education</h3>
                         <div class="space-y-4">
                             <div>
                                 <p class="font-bold text-gray-800">B.Tech Computer Science</p>
@@ -184,26 +226,24 @@
                             </div>
                         </div>
                     </div>
-                    <!-- right: certifications -->
-                    <div>
-                        <h3 class="font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-3">📜 Certifications</h3>
-                        <ul class="space-y-2 text-gray-700 list-disc list-inside">
-                            <li>Mobile Application Development – NSIC</li>
-                            <li>Red Hat Linux (Modules 1 & 2)</li>
+                    <!-- certifications -->
+                    <div class="bg-white/70 p-5 rounded-2xl shadow-sm hover-lift">
+                        <h3 class="font-semibold text-gray-800 border-b border-indigo-200 pb-2 mb-3 flex items-center gap-2"><span class="text-indigo-500">📜</span> Certifications</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">✔️</span> Mobile Application Development – NSIC</li>
+                            <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">✔️</span> Red Hat Linux (Modules 1 & 2)</li>
                         </ul>
-                        <!-- optional faint extra line (resume had duplicate tech line but we ignore) -->
                     </div>
                 </div>
             </div>
 
-            <!-- subtle footer with last year info (optional) -->
-            <div class="px-6 py-4 sm:px-10 bg-gray-50 text-gray-500 text-sm text-center border-t border-gray-100">
-                <span>📁 Full Stack Developer · 2 years experience · Chennai</span>
+            <!-- footer with small animation -->
+            <div class="px-6 py-4 sm:px-10 bg-white/50 text-gray-500 text-sm text-center border-t border-gray-100 backdrop-blur-sm">
+                <span class="inline-block animate-softPulse">⚡</span> Full Stack Developer · 2 years experience · Chennai <span class="inline-block animate-softPulse">⚡</span>
             </div>
         </div>
-        <!-- small note: all info from resume, designed with Tailwind only -->
-        <p class="text-xs text-gray-400 text-center mt-6">professional portfolio – based on resume data</p>
+        <!-- subtle watermark -->
+        <p class="text-xs text-gray-400 text-center mt-6 opacity-70 hover:opacity-100 transition-opacity">professional portfolio · based on resume data</p>
     </main>
 </body>
 </html>
-
