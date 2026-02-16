@@ -1,138 +1,208 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dhanasekaran S | Full Stack Developer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-    .glass {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanasekaran S · Full Stack Developer</title>
+    <!-- Tailwind CSS via CDN (v3) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional subtle font smoothing -->
+    <style>
+        body { background: #f4f7fb; }
+        .card-hover { transition: all 0.2s ease; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 20px -12px rgba(0,0,0,0.15); }
+    </style>
 </head>
+<body class="font-sans antialiased text-gray-800">
 
-<body class="bg-gradient-to-br from-blue-50 via-white to-purple-100 text-gray-800">
-  <header class="bg-white/80 backdrop-blur sticky top-0 z-10 shadow">
-    <div class="max-w-6xl mx-auto p-6 flex justify-between items-center">
-      <div>
-        <h1 class="text-4xl font-bold text-blue-800">Dhanasekaran S</h1>
-        <p class="text-md text-gray-600">Full Stack Developer</p>
-      </div>
-      <div class="text-sm text-right">
-        <p>📧 <a href="mailto:sekaransdhana365@gmail.com" class="text-blue-500 hover:underline">sekaransdhana365@gmail.com</a></p>
-        <p>📞 <a href="tel:9962332392"> +91 9962332392</a></p>
-        <p>📍 Chennai, India</p>
-        <p>🔗 <a href="https://linkedin.com/in/dhanasekaran-s-37719b249" class="text-blue-500 hover:underline">LinkedIn</a></p>
-      </div>
-    </div>
-  </header>
+    <!-- main container – responsive padding, max width -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
 
-  <section class="bg-gradient-to-tr from-blue-200 via-white to-purple-100 py-16 text-center">
-    <h2 class="text-5xl font-extrabold text-blue-900">Hello, I'm Dhanasekaran</h2>
-    <p class="text-lg text-gray-700 mt-2">A Passionate Full Stack Developer</p>
-    <a href="#projects" class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition">View My Work</a>
-  </section>
+        <!-- professional card -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
 
-  <main class="max-w-6xl mx-auto px-6 py-10">
-    <section class="mb-10">
-      <h2 class="text-3xl font-semibold text-blue-700 border-l-4 border-blue-500 pl-4 mb-4">Professional Summary</h2>
-      <p class="text-gray-700 leading-relaxed bg-white p-6 rounded-xl shadow glass">
-        Full Stack Developer with 2 years of hands-on experience in designing and developing web applications. Proficient in
-        HTML, CSS, JavaScript, Bootstrap, PHP, SQL, jQuery, and AJAX. Adept at problem-solving, team collaboration, and delivering high-quality code. Passionate about learning new technologies and optimizing web solutions.
-      </p>
-    </section>
+            <!-- header section with name & contact -->
+            <div class="px-6 py-8 sm:px-10 sm:py-10 border-b border-gray-200 bg-gradient-to-r from-indigo-50 to-blue-50">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight">DHANASEKARAN S</h1>
+                        <p class="text-xl md:text-2xl text-indigo-700 font-semibold mt-1">FULL STACK DEVELOPER</p>
+                    </div>
+                    <!-- contact details as simple text with emoji / line break -->
+                    <div class="text-sm md:text-base text-gray-700 space-y-1 md:text-right leading-relaxed">
+                        <div class="flex items-center md:justify-end gap-1"><span>📧</span> <a href="mailto:sekaransdhana365@gmail.com" class="hover:text-indigo-600 transition">sekaransdhana365@gmail.com</a></div>
+                        <div class="flex items-center md:justify-end gap-1"><span>📞</span> +91 99623 32392</div>
+                        <div class="flex items-center md:justify-end gap-1"><span>📍</span> Chennai, India</div>
+                        <div class="flex items-center md:justify-end gap-1"><span>🔗</span> <a href="#" class="hover:text-indigo-600 transition truncate">linkedin.com/in/dhanasekaran-s-37719b249</a></div>
+                    </div>
+                </div>
+            </div>
 
-    <section class="mb-10">
-      <h2 class="text-3xl font-semibold text-blue-700 border-l-4 border-blue-500 pl-4 mb-4">Experience</h2>
-      <div class="bg-white p-6 rounded-xl shadow glass">
-        <h3 class="text-2xl font-bold text-gray-800">Lead Integrated Business Service</h3>
-        <p class="text-sm text-gray-500 italic mb-4">Full Stack Developer | July 2023 - Present | Chennai, India</p>
-        <ul class="list-disc pl-6 text-gray-700 space-y-2">
-          <li>Developed and maintained web applications focused on user experience and performance.</li>
-          <li>Optimized database structures for efficiency.</li>
-          <li>Collaborated with teams to implement new features and resolve issues.</li>
-          <li>Ensured security best practices across development.</li>
-        </ul>
-      </div>
-    </section>
+            <!-- professional summary -->
+            <div class="px-6 py-6 sm:px-10 border-b border-gray-200 bg-white">
+                <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold mb-3">Professional Summary</h2>
+                <p class="text-gray-700 leading-relaxed text-base">Full Stack Developer with 2 years of experience building responsive and scalable web applications using PHP, MySQL, and modern front-end technologies including JavaScript and React.js. Experienced in end-to-end development, REST API integration, and performance optimization. Proven ability to deliver secure, high-quality solutions that enhance operational efficiency and user experience.</p>
+            </div>
 
-    <section id="projects" class="mb-10">
-      <h2 class="text-3xl font-semibold text-blue-700 border-l-4 border-blue-500 pl-4 mb-4">Projects</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-xl shadow glass">
-          <h3 class="font-bold text-xl text-blue-600">Employee Attendance Management System</h3>
-          <p class="text-sm text-gray-700 mt-2">Admin dashboard for real-time employee attendance, department creation, shift allocation, and analytics.</p>
-          <p class="text-xs text-gray-500 mt-1">Tech Stack: HTML, CSS, Bootstrap, PHP, MySQL, jQuery, AJAX</p>
+            <!-- skills & version control (as badges) -->
+            <div class="px-6 py-6 sm:px-10 border-b border-gray-200 bg-white">
+                <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold mb-4">Technical Skills</h2>
+                <div class="space-y-4">
+                    <div>
+                        <span class="text-sm font-medium text-gray-500 block mb-2">Frontend</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">React.js</span>
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">JavaScript</span>
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">Bootstrap</span>
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-sm font-medium text-gray-500 block mb-2">Backend & API</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">PHP</span>
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">jQuery</span>
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">AJAX</span>
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">REST API</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-sm font-medium text-gray-500 block mb-2">Database & Tools</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">MySQL</span>
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">Query Optimization</span>
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">Git</span>
+                            <span class="bg-indigo-50 text-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium">GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- professional experience (single role) -->
+            <div class="px-6 py-6 sm:px-10 border-b border-gray-200 bg-white">
+                <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold mb-4">Professional Experience</h2>
+                <div class="mb-2">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <h3 class="text-xl font-bold text-gray-800">Full Stack Developer</h3>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">July 2023 – Oct 2025</span>
+                    </div>
+                    <p class="text-indigo-600 font-medium mb-3">Lead Integrated Business Service Pvt Ltd, Chennai</p>
+                    <ul class="list-disc list-outside ml-5 space-y-2 text-gray-700 text-base">
+                        <li>Developed dynamic web applications using React.js, PHP, and MySQL, improving user engagement.</li>
+                        <li>Optimized SQL queries, reducing data retrieval time.</li>
+                        <li>Implemented security best practices and conducted performance tuning, enhancing application speed.</li>
+                        <li>Collaborated in Agile teams to deliver features and fix bugs in bi-weekly sprints.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- projects : 4 cards in grid -->
+            <div class="px-6 py-6 sm:px-10 border-b border-gray-200 bg-white">
+                <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold mb-5">Projects</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- project 1 -->
+                    <div class="border border-gray-200 rounded-xl p-5 bg-gray-50 card-hover">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">📦 Pharmaceutical Distribution & Reporting Panel</h3>
+                        <p class="text-sm text-gray-600 mb-3">Centralized dashboard for logistics with admin controls, daily sales/returns uploads, LR tracking, POD matching, real‑time reporting.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-2">
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">Bootstrap</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">PHP</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">MySQL</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">jQuery</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">AJAX</span>
+                        </div>
+                    </div>
+                    <!-- project 2 -->
+                    <div class="border border-gray-200 rounded-xl p-5 bg-gray-50 card-hover">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">⏱️ Employee Attendance Management System</h3>
+                        <p class="text-sm text-gray-600 mb-3">Role‑based web app for real‑time attendance tracking, shift allocation, holiday config. Dashboards for team heads (daily/monthly/late arrivals).</p>
+                        <div class="flex flex-wrap gap-1.5 mt-2">
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">Bootstrap</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">PHP</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">MySQL</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">jQuery</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">AJAX</span>
+                        </div>
+                    </div>
+                    <!-- project 3 -->
+                    <div class="border border-gray-200 rounded-xl p-5 bg-gray-50 card-hover">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">🛒 E‑Commerce Product Management System</h3>
+                        <p class="text-sm text-gray-600 mb-3">Admin panel for product, category, pricing, inventory management. Streamlined stock updates and product listing workflows.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-2">
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">CSS</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">Bootstrap</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">PHP</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">MySQL</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">jQuery</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">AJAX</span>
+                        </div>
+                    </div>
+                    <!-- project 4 -->
+                    <div class="border border-gray-200 rounded-xl p-5 bg-gray-50 card-hover">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">📧 Email Campaign Management System</h3>
+                        <p class="text-sm text-gray-600 mb-3">Create, schedule, track email campaigns. Gmail API integration for sending, template management, open/click tracking. Analytics dashboard & queue logic.</p>
+                        <div class="flex flex-wrap gap-1.5 mt-2">
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">React.js</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">Gmail API</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">PHP</span>
+                            <span class="bg-white border border-gray-300 text-gray-700 text-xs px-2 py-1 rounded">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- education & certifications in two columns on larger screens -->
+            <div class="px-6 py-6 sm:px-10 border-b border-gray-200 bg-white">
+                <h2 class="text-lg uppercase tracking-wider text-indigo-600 font-semibold mb-5">Education & Certifications</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- left: education -->
+                    <div>
+                        <h3 class="font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-3">🎓 Education</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="font-bold text-gray-800">B.Tech Computer Science</p>
+                                <p class="text-sm text-indigo-600">Dr. M.G.R. Educational and Research Institute, Chennai | 2023</p>
+                                <p class="text-sm text-gray-600">CGPA: 7.23</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Higher Secondary (Class XII) – State Board</p>
+                                <p class="text-sm text-indigo-600">Jaya Matriculation Hr Sec School, Chennai | 2019</p>
+                                <p class="text-sm text-gray-600">Percentage: 51.5%</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-gray-800">Secondary (Class X) – State Board</p>
+                                <p class="text-sm text-indigo-600">Jaya Matriculation Hr Sec School, Chennai | 2017</p>
+                                <p class="text-sm text-gray-600">Percentage: 72.4%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right: certifications -->
+                    <div>
+                        <h3 class="font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-3">📜 Certifications</h3>
+                        <ul class="space-y-2 text-gray-700 list-disc list-inside">
+                            <li>Mobile Application Development – NSIC</li>
+                            <li>Red Hat Linux (Modules 1 & 2)</li>
+                        </ul>
+                        <!-- optional faint extra line (resume had duplicate tech line but we ignore) -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- subtle footer with last year info (optional) -->
+            <div class="px-6 py-4 sm:px-10 bg-gray-50 text-gray-500 text-sm text-center border-t border-gray-100">
+                <span>📁 Full Stack Developer · 2 years experience · Chennai</span>
+            </div>
         </div>
-
-        <div class="bg-white p-6 rounded-xl shadow glass">
-          <h3 class="font-bold text-xl text-blue-600">E-Commerce Product Management</h3>
-          <p class="text-sm text-gray-700 mt-2">Admin panel for managing product listings, images, prices, and categories with inventory control.</p>
-          <p class="text-xs text-gray-500 mt-1">Tech Stack: HTML, CSS, JavaScript, Bootstrap, PHP, MySQL, jQuery, AJAX</p>
-        </div>
-
-        <div class="bg-white p-6 rounded-xl shadow glass">
-          <h3 class="font-bold text-xl text-blue-600">Pharmaceutical Distribution Dashboard</h3>
-          <p class="text-sm text-gray-700 mt-2">Dashboard for pharma logistics, employee uploads, LR tracking, and vehicle movement reports.</p>
-          <p class="text-xs text-gray-500 mt-1">Tech Stack: HTML, CSS, JavaScript, Bootstrap, PHP, MySQL, jQuery, AJAX</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-3xl font-semibold text-blue-700 border-l-4 border-blue-500 pl-4 mb-2">Education</h2>
-      <ul class="list-disc pl-6 text-gray-700 bg-white p-6 rounded-xl shadow glass">
-        <li>B.Tech in Computer Science - Dr. M.G.R. University (2023), CGPA: 7.23</li>
-        <li>HSC - Jaya Matriculation School (2019), 51.5%</li>
-        <li>SSLC - Jaya Matriculation School (2017), 72.4%</li>
-      </ul>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-3xl font-semibold text-blue-700 border-l-4 border-blue-500 pl-4 mb-2">Certifications</h2>
-      <ul class="list-disc pl-6 text-gray-700 bg-white p-6 rounded-xl shadow glass">
-        <li>Mobile App Development - NSIC (2021)</li>
-        <li>Red Hat Linux Modules 1 & 2 - RJP INFOTEK (2021)</li>
-        <li>HTML Certification - Solo Learn</li>
-      </ul>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-3xl font-semibold text-blue-700 border-l-4 border-blue-500 pl-4 mb-2">Technical Skills</h2>
-      <div class="grid md:grid-cols-2 gap-4 text-gray-700 bg-white p-6 rounded-xl shadow glass">
-        <ul class="list-disc pl-6">
-          <li>HTML, CSS, JavaScript, Bootstrap, jQuery</li>
-          <li>PHP, SQL, AJAX</li>
-        </ul>
-        <ul class="list-disc pl-6">
-          <li>MySQL, Git, GitHub</li>
-          <li>Linux, Windows</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold text-blue-700 border-l-4 border-blue-500 pl-4 mb-2">Soft Skills</h2>
-      <ul class="list-disc pl-6 text-gray-700 bg-white p-6 rounded-xl shadow glass">
-        <li>Time Management</li>
-        <li>Communication</li>
-        <li>Project Management</li>
-        <li>Problem-Solving</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="text-center py-6 bg-white/80 shadow mt-10 text-sm text-gray-500">
-    &copy; 2025 Dhanasekaran S. All rights reserved.
-  </footer>
+        <!-- small note: all info from resume, designed with Tailwind only -->
+        <p class="text-xs text-gray-400 text-center mt-6">professional portfolio – based on resume data</p>
+    </main>
 </body>
-
 </html>
